@@ -16,6 +16,6 @@
 
 using namespace std;
 
-void handle_SIGTERM(int);
 void handle_SIGUSR1(int);
 void handle_SIGUSR2(int);
+void handle_SIGTERM(int);
