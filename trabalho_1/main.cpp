@@ -1,5 +1,4 @@
-// csignal, iostream e namespace std ja definidos em handlers.h
-
+// Importacoes feitas em handlers.h
 #include "handlers.h"
 
 int main()
