@@ -5,30 +5,37 @@
 
 void handle_SIGTERM(int signum)
 {
-  int p[2];
+  // pfd = Pipe File Descriptor
+  int pfd[2];
   char inbuf[MSG_SIZE];
 
   srand(time(NULL));
 
-  // Inicializa uma instancia do pipe
-  if (pipe(p) < 0)
+  // Cria pipe e em caso de erro encerra com codigo 1
+  if (pipe(pfd) < 0)
     exit(1);
 
   // Criando processo filho
   int child = fork();
 
-  // Processo filho calcula um numero aleatorio entre 1 e 100 e envia via pipe
-  if (child == 0)
+  if (child > 0) // Se no processo pai
+  {
+    // Lendo do pipe
+    read(pfd[0], inbuf, MSG_SIZE);
+    cout << "Recebido: " << atoi(inbuf) << endl;
+  }
+  else if (child == 0) // Se no processo filho
   {
     char randomNumber[MSG_SIZE];
-
+    // int randomNumber -> char *randomNumber
     sprintf(randomNumber, "%d", rand() % 100 + 1);
 
     cout << "Enviando o numero " << randomNumber << " via pipe!" << endl;
-    write(p[1], randomNumber, MSG_SIZE);
+
+    // Escrevendo no pipe
+    write(pfd[1], randomNumber, MSG_SIZE);
   }
 
-  // Lendo do pipe
-  read(p[0], inbuf, MSG_SIZE);
-  cout << "Recebido: " << inbuf << endl;
+  // Encerrando pipe (tanto pai quanto filho executam)
+  close(pfd[0]);
 }
