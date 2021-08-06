@@ -11,7 +11,7 @@ int main()
   signal(SIGUSR2, handle_SIGUSR2);
   signal(SIGTERM, handle_SIGTERM);
 
-  while (1)
+  while (getListening())
   {
     sleep(1);
   }

@@ -14,8 +14,14 @@
 
 #endif
 
+// Maior numero possivel '100' (3 chars de 1 byte cada) + EOL
+#define MSG_SIZE 4
+// Caminho padrao para o executavel ping
+#define PATH_TO_PING "/bin/ping"
+
 using namespace std;
 
 void handle_SIGUSR1(int);
 void handle_SIGUSR2(int);
 void handle_SIGTERM(int);
+int getListening();
