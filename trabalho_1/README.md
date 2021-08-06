@@ -41,3 +41,4 @@ Shell: zsh 5.8
 - [SIGUSR1 & SIGUSR2](https://stackoverflow.com/questions/6168636/how-to-trigger-sigusr1-and-sigusr2)
 - [getenv](https://stackoverflow.com/questions/27822022/linux-c-detect-user-shell-csh-bash-etc)
 - [exec](https://www.dca.ufrn.br/~adelardo/cursos/DCA409/node39.html)
+- [makefile](https://earthly.dev/blog/g++-makefile/)
