@@ -1,3 +1,11 @@
+/** Trabalho 1 - Sistemas Operacionais
+ *  Periodo: 2021.1
+ *  Autor: Ricardo Santos Siqueira
+ *  DRE: 118167558
+ *  Arquivo: handlers.hpp
+ *  Descricao: Arquivo cabecalho das funcoes de handlers.hpp
+ */
+
 #include <iostream>
 #include <csignal>
 #include <string>

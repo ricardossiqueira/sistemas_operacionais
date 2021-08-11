@@ -1,6 +1,17 @@
+/** Trabalho 1 - Sistemas Operacionais
+ *  Periodo: 2021.1
+ *  Autor: Ricardo Santos Siqueira
+ *  DRE: 118167558
+ *  Arquivo: handlers.hpp
+ *  Descricao: Arquivo com as implementacoes das funcoes para lidar com cada
+ *             sinal recebido pela funcao main
+ */
+
 #include "handlers.hpp"
 
-int comandoParaExecutar = 0, listening = 1;
+int
+    comandoParaExecutar = 0,
+    listening = 1; // Enquanto 1 o programa escuta os sinais enviados
 
 void handle_SIGUSR1(int)
 {
@@ -51,7 +62,14 @@ void handle_SIGUSR2(int)
     else if (comandoParaExecutar % 2 == 0)
       execlp(PATH_TO_PING, "ping", "8.8.8.8", "-c", "5", NULL);
     else
-      execlp(PATH_TO_PING, "ping", "paris.testdebit.info", "-c", "5", "-i", "2", NULL);
+      execlp(PATH_TO_PING,
+             "ping",
+             "paris.testdebit.info",
+             "-c",
+             "5",
+             "-i",
+             "2",
+             NULL);
   }
 }
 
