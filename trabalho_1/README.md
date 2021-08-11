@@ -1,3 +1,10 @@
+# Trabalho 1 - Sistemas Operacionais
+
+**Aluno:** Ricardo Santos Siqueira
+
+**DRE:** 118167558
+
+**Período:** 2021.1 
 
 ## Ambiente de desenvolvimento
 
@@ -11,7 +18,12 @@ Shell: zsh 5.8
 
   Compilando a partir do diretório raiz
   ```console
-  g++ -Wall *.cpp *.h -o main
+  make all
+  ```
+
+  Limpando todos os arquivos gerados
+  ```console
+  make clean
   ```
 
 ## Teste
