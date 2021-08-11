@@ -40,7 +40,7 @@ void handle_SIGUSR1(int)
     // char *randomNumber recebe o numero aleatorio gerado
     sprintf(randomNumber, "%d", rand() % 100 + 1);
 
-    cout << "Enviando o numero " << randomNumber << " via pipe!" << endl;
+    cout << "Enviado o numero " << randomNumber << " via pipe!" << endl;
 
     // Escrevendo no pipe
     write(pfd[1], randomNumber, MSG_SIZE);
