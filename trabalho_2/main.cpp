@@ -34,7 +34,10 @@ int main(int argc, char *argv[])
   vector<thread> queue;
 
   for (int i = 0; i < 10; i++)
-    new thread(haircut);
+    queue.push_back(thread(haircut));
+
+  for (thread &t_ : queue)
+    t_.join();
 
   return 0;
 }
