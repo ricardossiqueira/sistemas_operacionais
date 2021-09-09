@@ -20,4 +20,4 @@ clean:
 	rm $(OBJS) $(TARGET)
 
 test:
-	make -s all; ./trabalho_2; make -s clean
+	make -s all; for i in {1..10}; do ./trabalho_2; echo ----$i----; done; make -s clean

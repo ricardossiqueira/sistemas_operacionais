@@ -27,9 +27,16 @@ Limpando todos os arquivos gerados
 make clean
 ```
 
-Compilação, execução e limpeza
+Compilação, 10 execuções e limpeza
 ```console
-make test #make all; ./trabalho_2; make clean
+make test 
+
+# make -s all;
+# for i in {1..10}; do
+#   ./trabalho_2;
+#   echo ----$i----;
+# done;
+# make -s clean
 ```
 
 ## Referências externas
